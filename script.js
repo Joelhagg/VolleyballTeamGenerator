@@ -1,16 +1,23 @@
-console.log("test");
-
+// Containers
 let initiate = document.getElementById("initiate");
 let initiateBtnContainer = document.getElementById("initiateBtnContainer");
-let addFieldBtn = document.getElementById("addFieldBtn");
+let teamGeneratorContainer = document.getElementById("teamGeneratorContainer");
 let playersContainer = document.getElementById("playersContainer");
+
+// Buttons
+let addFieldBtn = document.getElementById("addFieldBtn");
+
+//
 let createTeams = document.getElementById("createTeams");
-let output = document.getElementById("output");
 let teamOneContainer = document.getElementById("teamOneContainer");
 let teamTwoContainer = document.getElementById("teamTwoContainer");
 
+// teamGeneratorContainer.classList.add("hidden");
 initiate.addEventListener("click", () => {
   console.log("click");
+
+  // initiateBtnContainer.classList.add("hidden");
+  // teamGeneratorContainer.classList.remove("hidden");
 });
 
 addFieldBtn.addEventListener("click", () => {
@@ -36,13 +43,34 @@ createTeams.addEventListener("click", () => {
     let allPlayers = document.getElementsByTagName("input")[i].value;
     listOfPlayersFromInputs.push(allPlayers);
   }
+  console.log("before randomizer", listOfPlayersFromInputs);
 
-  listOfPlayersFromInputs.sort(() => Math.random() - 0.5);
+  const shuffle = (array) => {
+    let currentIndex = array.length,
+      randomIndex;
 
-  let middleIndex = Math.ceil(listOfPlayersFromInputs.length / 2);
+    while (currentIndex != 0) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
 
-  teamOne = listOfPlayersFromInputs.slice().splice(0, middleIndex);
-  teamTwo = listOfPlayersFromInputs.slice().splice(-middleIndex);
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex],
+        array[currentIndex],
+      ];
+    }
+    return array;
+  };
+
+  shuffle(listOfPlayersFromInputs);
+  console.log("after randomizer", listOfPlayersFromInputs);
+
+  listOfPlayersFromInputs.map((player, index) => {
+    if (index % 2 === 0) {
+      teamOne.push(player);
+    } else {
+      teamTwo.push(player);
+    }
+  });
 
   teamOneContainer.append(teamOne);
   teamTwoContainer.append(teamTwo);
