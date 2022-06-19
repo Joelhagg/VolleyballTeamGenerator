@@ -1,5 +1,3 @@
-console.log("test");
-
 // Containers
 let initiate = document.getElementById("initiate");
 let initiateBtnContainer = document.getElementById("initiateBtnContainer");
@@ -14,12 +12,12 @@ let createTeams = document.getElementById("createTeams");
 let teamOneContainer = document.getElementById("teamOneContainer");
 let teamTwoContainer = document.getElementById("teamTwoContainer");
 
-teamGeneratorContainer.classList.add("hidden");
+// teamGeneratorContainer.classList.add("hidden");
 initiate.addEventListener("click", () => {
   console.log("click");
 
-  initiateBtnContainer.classList.add("hidden");
-  teamGeneratorContainer.classList.remove("hidden");
+  // initiateBtnContainer.classList.add("hidden");
+  // teamGeneratorContainer.classList.remove("hidden");
 });
 
 addFieldBtn.addEventListener("click", () => {
@@ -48,10 +46,13 @@ createTeams.addEventListener("click", () => {
 
   listOfPlayersFromInputs.sort(() => Math.random() - 0.5);
 
-  let middleIndex = Math.ceil(listOfPlayersFromInputs.length / 2);
-
-  teamOne = listOfPlayersFromInputs.slice().splice(0, middleIndex);
-  teamTwo = listOfPlayersFromInputs.slice().splice(-middleIndex);
+  listOfPlayersFromInputs.map((player, index) => {
+    if (index % 2 === 0) {
+      teamOne.push(player);
+    } else {
+      teamTwo.push(player);
+    }
+  });
 
   teamOneContainer.append(teamOne);
   teamTwoContainer.append(teamTwo);
