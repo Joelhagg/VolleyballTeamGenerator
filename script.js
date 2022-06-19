@@ -43,8 +43,26 @@ createTeams.addEventListener("click", () => {
     let allPlayers = document.getElementsByTagName("input")[i].value;
     listOfPlayersFromInputs.push(allPlayers);
   }
+  console.log("before randomizer", listOfPlayersFromInputs);
 
-  listOfPlayersFromInputs.sort(() => Math.random() - 0.5);
+  const shuffle = (array) => {
+    let currentIndex = array.length,
+      randomIndex;
+
+    while (currentIndex != 0) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex],
+        array[currentIndex],
+      ];
+    }
+    return array;
+  };
+
+  shuffle(listOfPlayersFromInputs);
+  console.log("after randomizer", listOfPlayersFromInputs);
 
   listOfPlayersFromInputs.map((player, index) => {
     if (index % 2 === 0) {
