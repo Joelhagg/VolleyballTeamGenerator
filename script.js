@@ -7,7 +7,7 @@ let playersContainer = document.getElementById("playersContainer");
 let addFieldBtn = document.getElementById("addFieldBtn");
 
 //
-let createTeams = document.getElementById("createTeams");
+let createTeamsBtn = document.getElementById("createTeamsBtn");
 let teamOneContainer = document.getElementById("teamOneContainer");
 let teamTwoContainer = document.getElementById("teamTwoContainer");
 
@@ -18,7 +18,7 @@ addFieldBtn.addEventListener("click", () => {
   playersContainer.append(newInput);
 });
 
-createTeams.addEventListener("click", () => {
+createTeamsBtn.addEventListener("click", () => {
   let listOfPlayersFromInputs = [];
 
   let teamOne = [];
