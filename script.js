@@ -1,12 +1,9 @@
-// Containers
 let initiateBtnContainer = document.getElementById("initiateBtnContainer");
 let teamGeneratorContainer = document.getElementById("teamGeneratorContainer");
 let playersContainer = document.getElementById("playersContainer");
 
-// Buttons
 let addFieldBtn = document.getElementById("addFieldBtn");
 
-//
 let createTeamsBtn = document.getElementById("createTeamsBtn");
 let teamOneContainer = document.getElementById("teamOneContainer");
 let teamTwoContainer = document.getElementById("teamTwoContainer");
@@ -28,7 +25,6 @@ createTeamsBtn.addEventListener("click", () => {
   teamTwoContainer.innerHTML = "";
 
   let numberOfInputFields = document.querySelectorAll("input");
-  console.log(numberOfInputFields);
 
   for (let i = 0; i < numberOfInputFields.length; i++) {
     let allPlayers = document.getElementsByTagName("input")[i].value;
@@ -55,7 +51,6 @@ createTeamsBtn.addEventListener("click", () => {
   };
 
   shuffle(listOfPlayersFromInputs);
-  console.log("after randomizer", listOfPlayersFromInputs);
 
   listOfPlayersFromInputs.map((player, index) => {
     if (index % 2 === 0) {
