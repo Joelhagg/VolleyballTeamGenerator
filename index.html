@@ -12,11 +12,12 @@
     <title>Volleyball Team Generator</title>
 </head>
 <body>
-
-    <header>
-        <h1>Volleyball Team Generator</h1>
-        <h2>Vill du skapa lag för en volleybollmatch?</h2>
-    </header>
+    <div class="headerContainer">
+        <header>
+            <h1>Volleyball Team Generator</h1>
+            <h2>Vill du skapa lag för en volleybollmatch?</h2>
+        </header>
+    </div>
 
     <br>
     <br>
@@ -51,7 +52,7 @@
 
     <section id="teamsContainer">
 
-        <h2>Lag 1</h2>
+        <h2 id="teamHeading1">Lag 1</h2>
         <div id="teamOneContainer">
 
         </div>
@@ -59,13 +60,20 @@
         <br>
         <br>
 
-        <h2>Lag 2</h2>
+        <h2 id="teamHeading2">Lag 2</h2>
         <div id="teamTwoContainer">
 
         </div>
+        
+    </section>
 
-   </section>
+    <div id="removeAllInfoContainer">
+
+        <button id="removeAllInfoBtn">Rensa allt</button>
+    </div>
     
+
+
     <script src="./script.js"></script>
 </body>
 </html>

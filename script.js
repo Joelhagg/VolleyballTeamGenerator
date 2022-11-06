@@ -5,8 +5,14 @@ let playersContainer = document.getElementById("playersContainer");
 let addFieldBtn = document.getElementById("addFieldBtn");
 
 let createTeamsBtn = document.getElementById("createTeamsBtn");
+let teamsContainer = document.getElementById("teamsContainer");
+let teamHeading1 = document.getElementById("teamHeading1");
+let teamHeading2 = document.getElementById("teamHeading2");
 let teamOneContainer = document.getElementById("teamOneContainer");
 let teamTwoContainer = document.getElementById("teamTwoContainer");
+
+let removeAllInfoContainer = document.getElementById("removeAllInfoContainer");
+let removeAllInfoBtn = document.getElementById("removeAllInfoBtn");
 
 addFieldBtn.addEventListener("click", () => {
   let newInput = document.createElement("input");
@@ -16,6 +22,9 @@ addFieldBtn.addEventListener("click", () => {
 });
 
 createTeamsBtn.addEventListener("click", () => {
+  removeAllInfoContainer.classList.remove("hidden");
+  teamHeading1.classList.remove("hidden");
+  teamHeading2.classList.remove("hidden");
   let listOfPlayersFromInputs = [];
 
   let teamOne = [];
@@ -62,4 +71,17 @@ createTeamsBtn.addEventListener("click", () => {
 
   teamOneContainer.append(teamOne);
   teamTwoContainer.append(teamTwo);
+});
+
+window.addEventListener("load", () => {
+  console.log("load");
+
+  removeAllInfoContainer.classList.add("hidden");
+
+  teamHeading1.classList.add("hidden");
+  teamHeading2.classList.add("hidden");
+});
+
+removeAllInfoBtn.addEventListener("click", () => {
+  location.reload();
 });

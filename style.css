@@ -1,18 +1,28 @@
-body {
+html, body {
     padding: 0;
     margin: 0;
+    height: 100vh;
     text-align: center;
     color: rgb(255, 255, 255);
     text-shadow: -1px 0 black, 0 4px black, 4px 0 black, 0 -1px black;
     font-size: 20px;
-    background: rgb(167,249,255);
-    background: linear-gradient(0deg, rgba(167,249,255,0.5) 0%, rgba(255,167,224,1) 50%);
+    background: rgb(162, 255, 240);
     font-family: 'Press Start 2P', cursive;
     padding-top: 20px;
     background-repeat: no-repeat;
 }
 .hidden {
     display: none;
+}
+
+header {
+    width: 50vw;
+    text-align: center;
+}
+
+.headerContainer {
+    display: flex;
+    justify-content: center;
 }
 
 #teamGeneratorContainer {
@@ -30,7 +40,6 @@ body {
 }
 
 #playersContainer {
-
     max-width: 600px;
     display: flex;
     flex-wrap: wrap;
@@ -38,7 +47,6 @@ body {
 }
 
 #teamsContainer {
-
     font-size: 30px;
     padding-bottom: 100px;
     color: rgb(183, 43, 226);
@@ -91,6 +99,62 @@ input {
     box-shadow: 4px 4px rgb(118, 118, 118);
 }
 
+#removeAllInfoBtn {
+    margin-bottom: 100px;
+    height: 50px;
+    width: 300px;
+    font-size: 20px;
+    background: rgb(169, 47, 206);
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    border: solid black 2px;
+    box-shadow: 4px 4px rgb(118, 118, 118);
+    cursor: pointer;
+}
+
 ::placeholder {
     color: rgba(255, 255, 255, 0.463);
+}
+
+@media only screen and (max-width: 1000px) {
+    header {
+        font-size: 14px;
+        width: 80vw;
+    }
+}
+@media only screen and (max-width: 600px) {
+    header {
+        font-size: 10px;
+        width: 80vw;
+    }
+
+    input {
+        text-align: center;
+        height: 40px;
+        width: 320px;
+    }
+
+    #addFieldBtn {
+        height: 40px;
+        font-size: 20px;
+        background: rgb(169, 47, 206);
+        color: white;
+        font-family: 'Press Start 2P', cursive;
+        font-size: 15px;
+        border: solid black 2px;
+        box-shadow: 4px 4px rgb(118, 118, 118);
+        cursor: pointer;
+    }
+
+    #teamsContainer {
+        font-size: 20px;
+        padding-bottom: 100px;
+        color: rgb(183, 43, 226);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-shadow: -1px 0 black, 0 3px black, 3px 0 black, 0 -1px black;
+
+    }
 }
