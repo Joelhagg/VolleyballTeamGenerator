@@ -97,6 +97,7 @@ input {
     font-size: 16px;
     border: solid black 2px;
     box-shadow: 4px 4px rgb(118, 118, 118);
+    text-align: center;
 }
 
 #removeAllInfoBtn {
